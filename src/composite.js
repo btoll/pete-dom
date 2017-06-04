@@ -68,6 +68,28 @@ const composite = core.create(proto, {
     },
 
     /**
+     * @function getFirst
+     * @param {None}
+     * @return {HTMLElement}
+     *
+     * Returns the first dom element in the composite.
+     */
+    getFirst: function () {
+        return this.elements[0];
+    },
+
+    /**
+     * @function getLast
+     * @param {None}
+     * @return {HTMLElement}
+     *
+     * Returns the last dom element in the composite.
+     */
+    getLast: function () {
+        return this.elements[this.elements.length - 1];
+    },
+
+    /**
      * @function invoke
      * @param {String/HTMLElement} elem
      * @return {Element}
