@@ -2,7 +2,7 @@
   "name": "pete-dom",
   "version": "0.2.0",
   "description": "PeteJS DOM modules",
-  "main": "build/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/btoll/pete-dom.git"
