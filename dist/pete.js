@@ -12,7 +12,7 @@ var _util = _interopRequireDefault(require("./util"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
- * Copyright (c) 2009 - 2018 Benjamin Toll (benjamintoll.com)
+ * Copyright (c) 2009 - 2020 Benjamin Toll (benjamintoll.com)
  *
  * This file is part of pete-dom.
  *
