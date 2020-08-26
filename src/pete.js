@@ -47,20 +47,26 @@ const pete = {
      * This contains all possible HTML tags. Is used by `domQuery` and `get.dom`. Is used internally but can be overwritten for any custom needs.
      */
     tags: /^(?:\*|a|abbr|acronym|address|applet|area|b|base|basefont|bdo|big|blockquote|body|br|button|caption|center|cite|code|col|colgroup|dd|del|dfn|dir|div|dl|dt|em|fieldset|font|footer|form|frame|frameset|h1|h2|h3|h4|h5|h6|head|header|hr|html|i|iframe|img|input|ins|isindex|kbd|label|legend|li|link|map|menu|meta|noframes|noscript|object|ol|optgroup|option|p|param|pre|q|s|samp|script|section|select|small|span|strike|strong|style|sub|sup|table|tbody|td|textarea|tfoot|th|thead|title|tr|tt|u|ul|var)$/i
-
 };
 
 const ua = navigator.userAgent.toLocaleLowerCase();
 const isStrict = document.compatMode === 'CSS1Compat';
+const isChrome = ua.indexOf('chrome') > -1;
 const isOpera = ua.indexOf('opera') > -1;
 const isSafari = (/webkit|khtml/).test(ua);
 const isSafari3 = isSafari && ua.indexOf('webkit/5') !== -1;
 const isiPhone = ua.indexOf('iphone') > -1;
 //const isIE = /*@cc_on!@*/false; //IE conditional compilation;
+const isEdge = !isOpera && ua.indexOf('edge') > -1;
 const isIE = !isOpera && ua.indexOf('msie') > -1;
 const isIE6 = !isOpera && ua.indexOf('msie 6') > -1;
 const isIE7 = !isOpera && ua.indexOf('msie 7') > -1;
 const isIE8 = !isOpera && ua.indexOf('msie 8') > -1;
+//https://en.wikipedia.org/wiki/Internet_Explorer_9#User_agent_string
+const isIE9 = !isOpera && ua.indexOf('trident/5.0') > -1;
+//https://en.wikipedia.org/wiki/Internet_Explorer_10#User_agent_string
+const isIE10 = !isOpera && ua.indexOf('trident/6.0') > -1;
+const isIE11 = !isOpera && (ua.indexOf('trident/7.0') > -1 || ua.indexOf('trident/8.0') > -1);
 
 core.mixin(pete, {
     /**
@@ -68,6 +74,12 @@ core.mixin(pete, {
     * @type Boolean
     */
     isStrict: isStrict,
+
+    /**
+    * @property isChrome
+    * @type Boolean
+    */
+    isChrome: isChrome,
 
     /**
     * @property isOpera
@@ -94,6 +106,12 @@ core.mixin(pete, {
     isiPhone: isiPhone,
 
     /**
+    * @property isEdge
+    * @type Boolean
+    */
+    isEdge: isEdge,
+
+    /**
     * @property isIE
     * @type Boolean
     */
@@ -115,7 +133,25 @@ core.mixin(pete, {
     * @property isIE8
     * @type Boolean
     */
-    isIE8: isIE8
+    isIE8: isIE8,
+
+    /**
+    * @property isIE9
+    * @type Boolean
+    */
+    isIE9: isIE9,
+
+    /**
+    * @property isIE10
+    * @type Boolean
+    */
+    isIE10: isIE10,
+
+    /**
+    * @property isIE11
+    * @type Boolean
+    */
+    isIE11: isIE11
 });
 
 core.mixin(pete, {
